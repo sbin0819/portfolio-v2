@@ -1,12 +1,15 @@
-import React from 'react';
 import { Route } from 'react-router-dom';
+import { GlobalContainer } from './style/theme';
+import Header from './style/Header';
 import HomePage from './pages/HomePage';
 
 function App() {
   return (
-    <>
-      <Route path='/' exact component={HomePage} />
-    </>
+    <GlobalContainer>
+      <Header />
+      {/* <Route path='/' exact component={HomePage} /> */}
+      <HomePage />
+    </GlobalContainer>
   );
 }
 
