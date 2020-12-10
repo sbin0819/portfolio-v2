@@ -2,11 +2,15 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Container = styled.div`
-  padding-top: 40vh;
-  padding-left: 8vw;
+  display: flex;
+  height: 90vh;
+`;
 
+const BodyContainer = styled.div`
+  flex: 1;
   .title {
-    margin-bottom: 8px;
+    margin-top: 36vh;
+    margin-left: 4vw;
     h1 {
       font-size: 55px;
       margin-bottom: 16px;
@@ -14,29 +18,49 @@ const Container = styled.div`
     h2 {
       font-size: 36px;
     }
-  }
-  .logo {
-    span {
-      margin-right: 10px;
+    .logo {
+      margin-top: 10px;
+      span {
+        margin-right: 10px;
+      }
     }
+  }
+`;
+
+const ImageContainer = styled.div`
+  flex: 1;
+  .box {
+    margin-top: 22vh;
+    border: 5px solid pink;
+    height: 400px;
+    width: 600px;
+    font-size: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 `;
 
 const Home = () => {
   return (
-    <>
-      <Container>
+    <Container>
+      <BodyContainer>
         <div className='title'>
           <h1>Subin HA</h1>
           <h2>Frontend Web Developer</h2>
+          <div className='logo'>
+            <span>git</span>
+            <span>blog</span>
+            <span>gmail</span>
+          </div>
         </div>
-        <div className='logo'>
-          <span>git</span>
-          <span>blog</span>
-          <span>gmail</span>
+      </BodyContainer>
+      <ImageContainer>
+        <div className='box'>
+          <h1>COOL SVG</h1>
         </div>
-      </Container>
-    </>
+      </ImageContainer>
+    </Container>
   );
 };
 
