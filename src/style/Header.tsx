@@ -1,12 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { font } from '../style/theme';
+import { MenuOutlined } from '@ant-design/icons';
+import Navigator from './Navigator';
 // 햄버거 메뉴 추가
 // import Menu from '../components/common/Menu';
 
 const HeaderContainer = styled.div`
   display: flex;
-  padding: 0 4vw;
   align-items: center;
   justify-content: space-between;
   height: 54px;
@@ -32,17 +34,27 @@ const HeaderContainer = styled.div`
 `;
 
 const Header = () => {
+  const [visible, setVisible] = useState(false);
+  const onClick = () => {
+    setVisible((state) => !state);
+  };
   return (
-    <HeaderContainer>
-      <div className='logo'>SUBIN</div>
-      <div className='menus'>
-        <span>ABOUT</span>
-        <span>PORTFOILO</span>
-        <span>RESUME</span>
-        <span>BLOG</span>
-        <span>CONTACT</span>
-      </div>
-    </HeaderContainer>
+    <>
+      <HeaderContainer>
+        <div className='logo'>
+          <Link to='/'>SUBIN</Link>
+        </div>
+        <div className='menus'>
+          {/* <span>ABOUT</span>
+          <span>PORTFOILO</span>
+          <span>RESUME</span>
+          <span>BLOG</span>
+          <span>CONTACT</span> */}
+          <MenuOutlined style={{ fontSize: '28px' }} onClick={onClick} />
+        </div>
+      </HeaderContainer>
+      <Navigator visible={visible} onClick={onClick} />
+    </>
   );
 };
 

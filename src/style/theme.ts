@@ -31,8 +31,9 @@ export const theme = {
 
 export const GlobalContainer = styled.div`
   height: auto;
+  padding: 0 4vw;
   min-height: 100vh;
-  width: 100%;
+  width: calc(100vw - 8vw);
   background: black;
   color: white;
 `;
