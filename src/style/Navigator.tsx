@@ -28,7 +28,7 @@ export const NavigatorBody = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 15%;
+    margin-top: 8%;
     a {
       display: inline-flex;
       text-transform: uppercase;
